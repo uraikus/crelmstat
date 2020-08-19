@@ -1,9 +1,9 @@
 require("browser-env")();
-const crestat = require("./main");
+const crelmstat = require("./main");
 
 describe("global instance:", () => {
   let obj = {};
-  let state = crestat.global
+  let state = crelmstat.global
   test("set and get:", () => {
     state.set("global", true);
     expect(state.get("global")).toBe(true);
@@ -43,8 +43,8 @@ describe("global instance:", () => {
 });
 
 describe("local seperation:", () => {
-  let local = crestat();
-  let {global} = crestat
+  let local = crelmstat();
+  let {global} = crelmstat
   let obj = {};
   test("no access to global values:", () => {
     expect(local.get("global")).toBe(undefined);
@@ -60,13 +60,13 @@ describe("local seperation:", () => {
 
 describe('Deletion of subscribers on return null', () => {
   test('Delete function on return null:', () => {
-    let local = crestat()
+    let local = crelmstat()
     local.attach('happy', () => {return null})
     local.set('happy', true)
     expect(local.data.get('happy').subscribers.length).toBe(0)
   })
   test('Delete element on return null:', () => {
-    let local = crestat()
+    let local = crelmstat()
     let div = document.createElement('div')
     local.attach('sad', div, 'innerHTML')
     local.set('sad', true)
