@@ -16,8 +16,10 @@ describe("global instance:", () => {
   test("query selector update:", () => {
     document.body.innerHTML = '<b></b>'
     state.attach('global', 'b', "innerHTML");
+    expect(state.data.get('global').subscribers.length).toBe(2)
     state.set("global", 'false');
     expect(document.body.firstElementChild.innerHTML).toBe('false');
+    expect(state.data.get('global').subscribers.length).toBe(2)
   });
   test("attach function:", () => {
     let value
@@ -61,7 +63,7 @@ describe("local seperation:", () => {
 describe('Deletion of subscribers on return null', () => {
   test('Delete function on return null:', () => {
     let local = crelmstat()
-    local.attach('happy', () => {return null})
+    local.attach('happy', v => null)
     local.set('happy', true)
     expect(local.data.get('happy').subscribers.length).toBe(0)
   })

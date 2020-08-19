@@ -13,9 +13,11 @@ function crelmstat() {
 function set(key, value) {
   var data = this.state(key);
   data.value = value;
-  data.subscribers = data.subscribers.filter(function(s) {
-    s(value) !== null;
+  var filtered = data.subscribers.filter(function(s) {
+    var val = s(value);
+    return val !== null;
   });
+  data.subscribers = filtered;
 }
 
 function get(key) {

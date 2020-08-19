@@ -1,6 +1,6 @@
 {
   "name": "crelmstat",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "An expedient, super simple, fully tested, zero dependency, generic state management tool. Made specifically for use with crelm.",
   "main": "main-min.js",
   "scripts": {
