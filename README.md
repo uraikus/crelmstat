@@ -1,17 +1,17 @@
-# crestat
+# crelmstat
 
-An expedient, super simple, fully tested, zero dependency, generic state management tool. Made specifically for use with [crelm](https://www.npmjs.com/package/crelm).
+An expedient, super simple, fully tested, zero dependency, generic state management tool. Made specifically for (but not exclusively) [crelm](https://www.npmjs.com/package/crelm).
 
 ### installation
 ```cli
-npm i crestat
+npm i crelmstat
 ```
 ### import
 ```js
-import crestat from 'crestat'
-const state = crestat()
+import crelmstat from 'crelmstat'
+const state = crelmstat()
 // or
-const state = require('crestat')()
+const state = require('crelmstat')()
 ```
 ### usage
 ```js
@@ -47,11 +47,11 @@ state.attach(key, newValue => {
 ```
 ### global state
 ```js
-const {global} = require('crestat')
+const {global} = require('crelmstat')
 
 global.attach('test', document.body, 'innerHTML')
 global.set('test', 'Hello World!')
 global.get('test')
 // or
-window.state = require('crestat')()
+window.state = require('crelmstat')()
 ```

@@ -1,4 +1,4 @@
-function crestat() {
+function crelmstat() {
   return {
     data: new Map(),
     set: set,
@@ -45,7 +45,7 @@ function state(key) {
   if (data) return data;
   else {
     var obj = {
-      crestat: true,
+      crelmstat: true,
       subscribers: []
     };
     this.data.set(key, obj);
@@ -69,6 +69,6 @@ function toJSON() {
   return obj;
 }
 
-crestat.global = crestat();
+crelmstat.global = crelmstat();
 
-module.exports = crestat;
+module.exports = crelmstat;

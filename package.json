@@ -1,5 +1,5 @@
 {
-  "name": "crestat",
+  "name": "crelmstat",
   "version": "1.0.0",
   "description": "An expedient, super simple, fully tested, zero dependency, generic state management tool. Made specifically for use with crelm.",
   "main": "main-min.js",
@@ -8,7 +8,7 @@
     "test": "jest --coverage"
   },
   "repository": {
-    "url": "https://glitch.com/edit/#!/hello-sqlite"
+    "url": "https://github.com/uraikus/crelmstat"
   },
   "license": "MIT",
   "keywords": [
@@ -21,9 +21,7 @@
   ],
   "devDependencies": {
     "uglify-js": "^3.10.1",
-    "jest": "^26.4.0"
-  },
-  "dependencies": {
+    "jest": "^26.4.0",
     "browser-env": "^3.3.0"
   }
 }
